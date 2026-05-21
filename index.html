@@ -218,8 +218,8 @@
         </div>
         
         <div class="board-container">
-            <div class="category-card"><h3><span class="emoji">🌍</span> Club Sub</h3><div id="geo-board"></div></div>
-            <div class="category-card"><h3><span class="emoji">💎</span> Rock Spot</h3><div id="rock-board"></div></div>
+            <div class="category-card"><h3><span class="emoji">🌍</span> Rock Spot</h3><div id="geo-board"></div></div>
+            <div class="category-card"><h3><span class="emoji">💎</span> Club Sub</h3><div id="rock-board"></div></div>
             <div class="category-card" style="border-color: var(--challenge); background: rgba(213, 0, 249, 0.05);">
                 <h3 style="color: var(--challenge);"><span class="emoji">⚡</span> Brain Eruption </h3><div id="petro-board"></div>
             </div>
@@ -275,11 +275,11 @@ const roomsData = {
     2: {
         geo: {
             easy:   [{q: "ما هو الصخر البركاني المكافئ لصخر الجرانيت؟", a: "الريوليت (Rhyolite)"}],
-            medium: [{q: "ما هو نوع الفالق (Fault) الذي تتحرك فيه الكتلة العلوية إلى أسفل بالنسبة للكتلة السفلية؟", a: "فالق عادي (Normal Fault)"}],
-            hard:   [{q: "ما النسيج البركاني الناتج عن تبرد الMagma تحت الماء مباشرة؟", a: "pillow lava"}]
+            medium: [{q: "ما هو هذا المعدن  ؟", a: "Chromite", img: "https://geophysics.earth.northwestern.edu/NU-Geopaths/MConnell/pictures/imagechromite1.jpg"}],
+            hard:   [{q: "ما الشكل البركاني الناتج عن تبرد الMagma تحت الماء مباشرة؟", a: "pillow lava"}]
         },
         rock: {
-            easy:   [{q: "ما اسم الجلسات الأسبوعية التي كان يقيمها النادي لتعلم الإنجليزية؟", a: "Speaking Center", img: ""}],
+            easy:   [{q: "ما اسم الجلسات الأسبوعية التي كان يقيمها النادي لتعلم الإنجليزية？", a: "Speaking Center", img: ""}],
             medium: [{q: "ما الفعاليات التي تكررت في الترمين الأول والثاني؟", a: "Students' Symposium", img: ""}],
             hard:   [{q: "ما أول فعالية أُقيمت في الترم الثاني؟", a: "الأمسية الرمضانية", img: ""}]
         },
@@ -306,9 +306,9 @@ const roomsData = {
     },
     4: { 
         geo: { 
-            easy:   [{q: "ما هو الغلاف الأرضي السائل الذي يقع بين الوشاح واللب الداخلي؟", a: "اللب الخارجي (Outer Core)"}], 
+            easy:   [{q: "ما هو هذا الصخر؟", a: "Granite", img: "https://www.geologypage.com/wp-content/uploads/2019/05/Granite-Rocks-GeologyPage.jpg"}], 
             medium: [{q: "ما هو نوع عدم التوافق الذي يفصل بين طبقات رسوبية أفقية تعلو صخوراً نارية أو متحولة؟", a: "عدم توافق لا متجانس (Nonconformity)"}], 
-            hard:   [{q: "ما هي النظرية التي توضح آلية حركة الغلاف الصخري للأرض وتصادمه؟", a: "تكتونية الصفائح (Plate Tectonics)"}] 
+            hard:   [{q: "ماذا كانت تسمى اول قارة عظمى على الارض؟", a: "Pangaea"}] 
         }, 
         rock: { 
             easy:   [{q: "مالذي أضيف إلى الـ Students Symposium في نسخته الثالثة؟", a: "The Hackathon", img: ""}], 
@@ -322,7 +322,7 @@ const roomsData = {
     },
     5: { 
         geo: { 
-            easy:   [{q: "ما هو الصخر المتحول الناتج عن تحول الحجر الجيري (Limestone)؟", a: "الرخام (Marble)"}], 
+            easy:   [{q: "ما هو الصخر المتحول الناتج عن تحول الحجر الجيري (Limestone)？", a: "الرخام (Marble)"}], 
             medium: [{q: "ما هو المعدن المعروف بلقب (ذهب المغفلين) بسبب لونه الذهبي المخادع؟", a: "البيريت (Pyrite)"}], 
             hard:   [{q: "ما المعدن الناتج غالبًا من تحول olivine في الصخور فوق المافية؟", a: "serpentine"}] 
         }, 
@@ -410,7 +410,7 @@ function initGame() { state.t1 = document.getElementById('team1-name').value || 
 function renderBoard() {
     document.getElementById('board-title').innerHTML = (currentRoom === 6) ? "الفقرة السرية <span class='emoji'>❓</span>" : "القائمة " + currentRoom;
     document.getElementById('score1').innerHTML = `<div style="font-size:0.9rem; opacity:0.8; font-weight:600;">${state.t1}</div><div style="font-size:2rem; font-weight:900; color:var(--accent); margin-top:5px;">${state.s1}</div>`;
-    document.getElementById('score2').innerHTML = `<div style="font-size:0.9rem; opacity:0.8; font-weight:600;">${state.t2}</div><div style="font-size:2rem; font-weight:900; color:var(--accent); margin-top:5px;">${state.s1}</div>`;
+    document.getElementById('score2').innerHTML = `<div style="font-size:0.9rem; opacity:0.8; font-weight:600;">${state.t2}</div><div style="font-size:2rem; font-weight:900; color:var(--accent); margin-top:5px;">${state.s2}</div>`;
     
     fillNormal('geo', 'geo-board'); 
     fillNormal('rock', 'rock-board'); 
